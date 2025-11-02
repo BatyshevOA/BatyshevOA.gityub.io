@@ -1,466 +1,467 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Экзаменационные материалы по столярному делу - 9 класс</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Times New Roman', serif;
-        }
-        
-        body {
-            background-image: url('file:///C:/Users/11/Documents/25_26/DEEPSEEK/2%20ДОРАБОТКА/САЙТ%20с%20билетами/087b395b-6d16-4654-b161-bf4117deb541.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #333333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #2C3E50, #3498DB);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            border-bottom: 5px solid #3498DB;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        h1 {
-            font-size: 32px;
-            margin-bottom: 12px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            position: relative;
-            letter-spacing: 1px;
-        }
-        
-        .subtitle {
-            font-size: 18px;
-            opacity: 0.9;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            position: relative;
-            margin-bottom: 10px;
-        }
-        
-        .author {
-            font-size: 16px;
-            font-style: italic;
-            margin-top: 10px;
-            opacity: 0.9;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .page {
-            display: none;
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            margin-top: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
-        }
-        
-        .active {
-            display: block;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", serif;
+      }
+
+      body {
+        background-image: url("file:///C:/Users/11/Documents/25_26/DEEPSEEK/2%20ДОРАБОТКА/САЙТ%20с%20билетами/087b395b-6d16-4654-b161-bf4117deb541.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #333333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border-bottom: 5px solid #3498db;
+        position: relative;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 12px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        position: relative;
+        letter-spacing: 1px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .author {
+        font-size: 16px;
+        font-style: italic;
+        margin-top: 10px;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .page {
+        display: none;
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        margin-top: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+      }
+
+      .active {
+        display: block;
+      }
+
+      .ticket-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .ticket-item {
+        background-color: #ecf0f1;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-image: linear-gradient(to bottom, #ffffff, #ecf0f1);
+      }
+
+      .ticket-item:hover {
+        background-color: #dde4e6;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-color: #3498db;
+      }
+
+      .ticket-number {
+        font-weight: bold;
+        font-size: 18px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .ticket-title {
+        font-size: 16px;
+        color: #333333;
+      }
+
+      .ticket-content {
+        margin-top: 20px;
+      }
+
+      .ticket-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+      }
+
+      .back-button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .back-button:hover {
+        background-color: #2980b9;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .question {
+        margin-bottom: 30px;
+      }
+
+      .question-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #2c3e50;
+        font-size: 18px;
+        border-left: 4px solid #3498db;
+        padding-left: 10px;
+      }
+
+      .question-content {
+        padding-left: 20px;
+      }
+
+      .question-content p {
+        margin-bottom: 15px;
+        color: #333333;
+      }
+
+      .question-content ul,
+      .question-content ol {
+        margin-bottom: 15px;
+        padding-left: 30px;
+      }
+
+      .question-content li {
+        margin-bottom: 8px;
+        color: #333333;
+      }
+
+      .highlight {
+        background-color: #e8f4fc;
+        padding: 2px 5px;
+        border-radius: 3px;
+        color: #2c3e50;
+      }
+
+      .conclusion {
+        background-color: #ecf0f1;
+        padding: 15px;
+        border-left: 4px solid #3498db;
+        margin-top: 20px;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+        color: #2c3e50;
+      }
+
+      .illustrations {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background-image: linear-gradient(to bottom, #ffffff, #ecf0f1);
+      }
+
+      .illustrations h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+      }
+
+      .illustration-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .illustration-link {
+        display: inline-block;
+        background-color: #3498db;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .illustration-link:hover {
+        background-color: #2980b9;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .visit-counter {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(52, 152, 219, 0.9);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .test-link,
+      .additional-questions {
+        margin: 30px 0;
+        padding: 20px;
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .test-link h3,
+      .additional-questions h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+      }
+
+      .test-button {
+        display: inline-block;
+        background-color: #3498db;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: all 0.3s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .test-button:hover {
+        background-color: #2980b9;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .additional-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .additional-link {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s;
+      }
+
+      .additional-link:hover {
+        background-color: #e8f4fc;
+        border-color: #3498db;
+        transform: translateY(-3px);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .test-question {
+        margin-bottom: 25px;
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      .test-options {
+        margin-top: 10px;
+      }
+
+      .test-option {
+        margin-bottom: 8px;
+      }
+
+      .test-result {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
         .ticket-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+          grid-template-columns: 1fr;
         }
-        
-        .ticket-item {
-            background-color: #ECF0F1;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background-image: linear-gradient(to bottom, #ffffff, #ECF0F1);
-        }
-        
-        .ticket-item:hover {
-            background-color: #dde4e6;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-color: #3498DB;
-        }
-        
-        .ticket-number {
-            font-weight: bold;
-            font-size: 18px;
-            color: #2C3E50;
-            margin-bottom: 10px;
-        }
-        
-        .ticket-title {
-            font-size: 16px;
-            color: #333333;
-        }
-        
-        .ticket-content {
-            margin-top: 20px;
-        }
-        
+
         .ticket-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3498DB;
+          flex-direction: column;
+          align-items: flex-start;
         }
-        
+
         .back-button {
-            background-color: #3498DB;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          margin-top: 10px;
         }
-        
-        .back-button:hover {
-            background-color: #2980b9;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-        }
-        
-        .question {
-            margin-bottom: 30px;
-        }
-        
-        .question-title {
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #2C3E50;
-            font-size: 18px;
-            border-left: 4px solid #3498DB;
-            padding-left: 10px;
-        }
-        
-        .question-content {
-            padding-left: 20px;
-        }
-        
-        .question-content p {
-            margin-bottom: 15px;
-            color: #333333;
-        }
-        
-        .question-content ul, .question-content ol {
-            margin-bottom: 15px;
-            padding-left: 30px;
-        }
-        
-        .question-content li {
-            margin-bottom: 8px;
-            color: #333333;
-        }
-        
-        .highlight {
-            background-color: #e8f4fc;
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: #2C3E50;
-        }
-        
-        .conclusion {
-            background-color: #ECF0F1;
-            padding: 15px;
-            border-left: 4px solid #3498DB;
-            margin-top: 20px;
-            font-style: italic;
-            border-radius: 0 8px 8px 0;
-            color: #2C3E50;
-        }
-        
-        .illustrations {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #ECF0F1;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            background-image: linear-gradient(to bottom, #ffffff, #ECF0F1);
-        }
-        
-        .illustrations h3 {
-            color: #2C3E50;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-        }
-        
+
         .illustration-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+          flex-direction: column;
         }
-        
-        .illustration-link {
-            display: inline-block;
-            background-color: #3498DB;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+        h1 {
+          font-size: 26px;
         }
-        
-        .illustration-link:hover {
-            background-color: #2980b9;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-        }
-        
-        .visit-counter {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(52, 152, 219, 0.9);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 14px;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        
-        .test-link, .additional-questions {
-            margin: 30px 0;
-            padding: 20px;
-            background-color: #ECF0F1;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-        
-        .test-link h3, .additional-questions h3 {
-            color: #2C3E50;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-        }
-        
-        .test-button {
-            display: inline-block;
-            background-color: #3498DB;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .test-button:hover {
-            background-color: #2980b9;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-            transform: translateY(-2px);
-        }
-        
+
         .additional-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+          grid-template-columns: 1fr;
         }
-        
-        .additional-link {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s;
-        }
-        
-        .additional-link:hover {
-            background-color: #e8f4fc;
-            border-color: #3498DB;
-            transform: translateY(-3px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        }
-        
-        .test-question {
-            margin-bottom: 25px;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        
-        .test-options {
-            margin-top: 10px;
-        }
-        
-        .test-option {
-            margin-bottom: 8px;
-        }
-        
-        .test-result {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #ECF0F1;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .ticket-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .ticket-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .back-button {
-                margin-top: 10px;
-            }
-            
-            .illustration-links {
-                flex-direction: column;
-            }
-            
-            h1 {
-                font-size: 26px;
-            }
-            
-            .additional-links {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>МКОУ С(К)ОШИ г.Ленска, МР "Ленский район" РС(Я)</h1>
-            <div class="subtitle">ЭКЗАМЕНАЦИОННЫЕ МАТЕРИАЛЫ ДЛЯ ГОСУДАРСТВЕННОЙ ИТОГОВОЙ АТТЕСТАЦИИ ВЫПУСКНИКОВ 9-х КЛАССОВ</div>
-            <div class="author">Автор: Батышев О.А.</div>
-        </div>
+      <div class="container">
+        <h1>МКОУ С(К)ОШИ г.Ленска, МР "Ленский район" РС(Я)</h1>
+        <div class="subtitle">ЭКЗАМЕНАЦИОННЫЕ МАТЕРИАЛЫ ДЛЯ ГОСУДАРСТВЕННОЙ ИТОГОВОЙ АТТЕСТАЦИИ ВЫПУСКНИКОВ 9-х КЛАССОВ</div>
+        <div class="author">Автор: Батышев О.А.</div>
+      </div>
     </header>
-    
+
     <div class="container">
-        <!-- Первая страница - список билетов -->
-        <div id="page1" class="page active">
-            <h2>Экзаменационные билеты</h2>
-            
-            <!-- Список билетов -->
-            <div class="ticket-list" id="ticketList">
-                <!-- Билеты будут добавлены через JavaScript -->
-            </div>
-            
-            <!-- Ссылки на дополнительные вопросы -->
-            <div class="additional-questions">
-                <h3>Дополнительные вопросы по столярному делу</h3>
-                <div class="additional-links">
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(1)">1. Какие профессии связаны со столярным делом</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(2)">2. Техника безопасности с ручным столярным инструментом</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(3)">3. Устройство рубанка</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(4)">4. Молоток, назначение, части молотка</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(5)">5. Ножовка, назначение</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(6)">6. Строение древесины</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(7)">7. Породы древесины</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(8)">8. Верстак, части, назначение</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(9)">9. Клей, его виды</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(10)">10. Киянка, назначение, части</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(11)">11. Строение табурета</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(12)">12. Что такое прозрачная отделка столярных изделий</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(13)">13. Что такое непрозрачная отделка столярных изделий</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(14)">14. Стамеска, назначение, части</a>
-                    <a href="#" class="additional-link" onclick="showAdditionalQuestion(15)">15. Что такое пиломатериал, его виды</a>
-                </div>
-            </div>
-            
-            <!-- Ссылка на экзаменационный тест -->
-            <div class="test-link">
-                <h3>Экзаменационный тест по столярному делу (9 класс)</h3>
-                <a href="#" class="test-button" onclick="showPage(3)">Пройти тест</a>
-                <p style="margin-top: 10px;">Инструкция для ученика: Выберите один правильный ответ для каждого вопроса.</p>
-            </div>
+      <!-- Первая страница - список билетов -->
+      <div id="page1" class="page active">
+        <h2>Экзаменационные билеты</h2>
+
+        <!-- Список билетов -->
+        <div class="ticket-list" id="ticketList">
+          <!-- Билеты будут добавлены через JavaScript -->
         </div>
-        
-        <!-- Вторая страница - содержание билета -->
-        <div id="page2" class="page">
-            <div class="ticket-header">
-                <h2 id="ticketPageTitle">Содержание билета</h2>
-                <button class="back-button" onclick="showPage(1)">Назад к списку</button>
-            </div>
-            <div class="ticket-content" id="ticketContent">
-                <!-- Содержание билета будет добавлено через JavaScript -->
-            </div>
-            <div class="illustrations" id="illustrationsSection">
-                <!-- Ссылки на иллюстрации будут добавлены через JavaScript -->
-            </div>
+
+        <!-- Ссылки на дополнительные вопросы -->
+        <div class="additional-questions">
+          <h3>Дополнительные вопросы по столярному делу</h3>
+          <div class="additional-links">
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(1)">1. Какие профессии связаны со столярным делом</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(2)">2. Техника безопасности с ручным столярным инструментом</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(3)">3. Устройство рубанка</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(4)">4. Молоток, назначение, части молотка</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(5)">5. Ножовка, назначение</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(6)">6. Строение древесины</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(7)">7. Породы древесины</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(8)">8. Верстак, части, назначение</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(9)">9. Клей, его виды</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(10)">10. Киянка, назначение, части</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(11)">11. Строение табурета</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(12)">12. Что такое прозрачная отделка столярных изделий</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(13)">13. Что такое непрозрачная отделка столярных изделий</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(14)">14. Стамеска, назначение, части</a>
+            <a href="#" class="additional-link" onclick="showAdditionalQuestion(15)">15. Что такое пиломатериал, его виды</a>
+          </div>
         </div>
-        
-        <!-- Третья страница - экзаменационный тест -->
-        <div id="page3" class="page">
-            <div class="ticket-header">
-                <h2>Экзаменационный тест по столярному делу</h2>
-                <button class="back-button" onclick="showPage(1)">Назад к списку</button>
-            </div>
-            <div id="testContent">
-                <!-- Содержание теста будет добавлено через JavaScript -->
-            </div>
+
+        <!-- Ссылка на экзаменационный тест -->
+        <div class="test-link">
+          <h3>Экзаменационный тест по столярному делу (9 класс)</h3>
+          <a href="#" class="test-button" onclick="showPage(3)">Пройти тест</a>
+          <p style="margin-top: 10px">Инструкция для ученика: Выберите один правильный ответ для каждого вопроса.</p>
         </div>
-        
-        <!-- Четвертая страница - дополнительные вопросы -->
-        <div id="page4" class="page">
-            <div class="ticket-header">
-                <h2 id="additionalPageTitle">Дополнительные вопросы</h2>
-                <button class="back-button" onclick="showPage(1)">Назад к списку</button>
-            </div>
-            <div id="additionalContent">
-                <!-- Содержание дополнительных вопросов будет добавлено через JavaScript -->
-            </div>
+      </div>
+
+      <!-- Вторая страница - содержание билета -->
+      <div id="page2" class="page">
+        <div class="ticket-header">
+          <h2 id="ticketPageTitle">Содержание билета</h2>
+          <button class="back-button" onclick="showPage(1)">Назад к списку</button>
         </div>
-    </div>
-    
-    <!-- Счетчик посещений -->
-    <div class="visit-counter" id="visitCounter">
-        Посещений: <span id="visitCount">0</span>
+        <div class="ticket-content" id="ticketContent">
+          <!-- Содержание билета будет добавлено через JavaScript -->
+        </div>
+        <div class="illustrations" id="illustrationsSection">
+          <!-- Ссылки на иллюстрации будут добавлены через JavaScript -->
+        </div>
+      </div>
+
+      <!-- Третья страница - экзаменационный тест -->
+      <div id="page3" class="page">
+        <div class="ticket-header">
+          <h2>Экзаменационный тест по столярному делу</h2>
+          <button class="back-button" onclick="showPage(1)">Назад к списку</button>
+        </div>
+        <div id="testContent">
+          <!-- Содержание теста будет добавлено через JavaScript -->
+        </div>
+      </div>
+
+      <!-- Четвертая страница - дополнительные вопросы -->
+      <div id="page4" class="page">
+        <div class="ticket-header">
+          <h2 id="additionalPageTitle">Дополнительные вопросы</h2>
+          <button class="back-button" onclick="showPage(1)">Назад к списку</button>
+        </div>
+        <div id="additionalContent">
+          <!-- Содержание дополнительных вопросов будет добавлено через JavaScript -->
+        </div>
+      </div>
     </div>
 
+    <!-- Счетчик посещений -->
+    <div class="visit-counter" id="visitCounter">Посещений: <span id="visitCount">0</span></div>
+
     <script>
-        // Счетчик посещений
-        function updateVisitCounter() {
-            let visits = localStorage.getItem('pageVisits');
-            if (!visits) {
-                visits = 1;
-            } else {
-                visits = parseInt(visits) + 1;
-            }
-            localStorage.setItem('pageVisits', visits);
-            document.getElementById('visitCount').textContent = visits;
+      // Счетчик посещений
+      function updateVisitCounter() {
+        let visits = localStorage.getItem("pageVisits");
+        if (!visits) {
+          visits = 1;
+        } else {
+          visits = parseInt(visits) + 1;
         }
-        
-        // Данные билетов
-        const tickets = [
-            {
-                number: 1,
-                title: "Значение древесины в народном хозяйстве",
-                content: `
+        localStorage.setItem("pageVisits", visits);
+        document.getElementById("visitCount").textContent = visits;
+      }
+
+      // Данные билетов
+      const tickets = [
+        {
+          number: 1,
+          title: "Значение древесины в народном хозяйстве",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Значение древесины в народном хозяйстве</div>
                         <div class="question-content">
@@ -485,16 +486,16 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Использование древесины в строительстве", url: "images/билет-1/использование-древесины-строительство.jpg" },
-                    { name: "Деревянная мебель", url: "images/билет-1/деревянная-мебель.jpg" },
-                    { name: "Производство бумаги из древесины", url: "images/билет-1/производство-бумаги.jpg" }
-                ]
-            },
-            {
-                number: 2,
-                title: "Составные части дерева",
-                content: `
+          illustrations: [
+            { name: "Использование древесины в строительстве", url: "images/билет-1/использование-древесины-строительство.jpg" },
+            { name: "Деревянная мебель", url: "images/билет-1/деревянная-мебель.jpg" },
+            { name: "Производство бумаги из древесины", url: "images/билет-1/производство-бумаги.jpg" },
+          ],
+        },
+        {
+          number: 2,
+          title: "Составные части дерева",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Составные части дерева</div>
                         <div class="question-content">
@@ -513,16 +514,16 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Строение дерева", url: "images/билет-2/строение-дерева.jpg" },
-                    { name: "Корневая система", url: "images/билет-2/корневая-система.jpg" },
-                    { name: "Строение ствола дерева", url: "images/билет-2/строение-ствола.jpg" }
-                ]
-            },
-            {
-                number: 3,
-                title: "Строение древесины. Главные разрезы ствола",
-                content: `
+          illustrations: [
+            { name: "Строение дерева", url: "images/билет-2/строение-дерева.jpg" },
+            { name: "Корневая система", url: "images/билет-2/корневая-система.jpg" },
+            { name: "Строение ствола дерева", url: "images/билет-2/строение-ствола.jpg" },
+          ],
+        },
+        {
+          number: 3,
+          title: "Строение древесины. Главные разрезы ствола",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Строение древесины. Главные разрезы ствола</div>
                         <div class="question-content">
@@ -586,16 +587,16 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Строение древесины", url: "images/билет-3/строение-древесины.jpg" },
-                    { name: "Годовые кольца", url: "images/билет-3/годовые-кольца.jpg" },
-                    { name: "Виды разрезов древесины", url: "images/билет-3/виды-разрезов.jpg" }
-                ]
-            },
-            {
-                number: 4,
-                title: "Годичные слои и смоляные ходы древесины",
-                content: `
+          illustrations: [
+            { name: "Строение древесины", url: "images/билет-3/строение-древесины.jpg" },
+            { name: "Годовые кольца", url: "images/билет-3/годовые-кольца.jpg" },
+            { name: "Виды разрезов древесины", url: "images/билет-3/виды-разрезов.jpg" },
+          ],
+        },
+        {
+          number: 4,
+          title: "Годичные слои и смоляные ходы древесины",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Годичные слои и смоляные ходы древесины</div>
                         <div class="question-content">
@@ -658,16 +659,16 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Годичные кольца дерева", url: "images/билет-4/годовые-кольца-деталь.jpg" },
-                    { name: "Смоляные ходы в древесине", url: "images/билет-4/смоляные-ходы.jpg" },
-                    { name: "Строение ствола хвойного дерева", url: "images/билет-4/строение-ствола-хвойного.jpg" }
-                ]
-            },
-            {
-                number: 5,
-                title: "Физические свойства древесины",
-                content: `
+          illustrations: [
+            { name: "Годичные кольца дерева", url: "images/билет-4/годовые-кольца-деталь.jpg" },
+            { name: "Смоляные ходы в древесине", url: "images/билет-4/смоляные-ходы.jpg" },
+            { name: "Строение ствола хвойного дерева", url: "images/билет-4/строение-ствола-хвойного.jpg" },
+          ],
+        },
+        {
+          number: 5,
+          title: "Физические свойства древесины",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Физические свойства древесины</div>
                         <div class="question-content">
@@ -709,16 +710,16 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Цвет и текстура различных пород древесины", url: "images/билет-5/цвет-текстура-древесины.jpg" },
-                    { name: "Измерение влажности древесины", url: "images/билет-5/измерение-влажности.jpg" },
-                    { name: "Плотность различных пород дерева", url: "images/билет-5/плотность-древесины.jpg" }
-                ]
-            },
-            {
-                number: 6,
-                title: "Механические свойства древесины",
-                content: `
+          illustrations: [
+            { name: "Цвет и текстура различных пород древесины", url: "images/билет-5/цвет-текстура-древесины.jpg" },
+            { name: "Измерение влажности древесины", url: "images/билет-5/измерение-влажности.jpg" },
+            { name: "Плотность различных пород дерева", url: "images/билет-5/плотность-древесины.jpg" },
+          ],
+        },
+        {
+          number: 6,
+          title: "Механические свойства древесины",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Механические свойства древесины</div>
                         <div class="question-content">
@@ -739,15 +740,15 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Прочность древесины при различных нагрузках", url: "images/билет-6/прочность-древесины.jpg" },
-                    { name: "Тестирование твердости древесины", url: "images/билет-6/тестирование-твердости.jpg" }
-                ]
-            },
-            {
-                number: 7,
-                title: "Технологические свойства древесины",
-                content: `
+          illustrations: [
+            { name: "Прочность древесины при различных нагрузках", url: "images/билет-6/прочность-древесины.jpg" },
+            { name: "Тестирование твердости древесины", url: "images/билет-6/тестирование-твердости.jpg" },
+          ],
+        },
+        {
+          number: 7,
+          title: "Технологические свойства древесины",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Технологические свойства древесины</div>
                         <div class="question-content">
@@ -768,16 +769,16 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Способность древесины удерживать крепления", url: "images/билет-7/крепления-древесины.jpg" },
-                    { name: "Технология гнутья древесины", url: "images/билет-7/гнутье-древесины.jpg" },
-                    { name: "Износостойкость различных пород", url: "images/билет-7/износостойкость.jpg" }
-                ]
-            },
-            {
-                number: 8,
-                title: "Виды деревообрабатывающих станков",
-                content: `
+          illustrations: [
+            { name: "Способность древесины удерживать крепления", url: "images/билет-7/крепления-древесины.jpg" },
+            { name: "Технология гнутья древесины", url: "images/билет-7/гнутье-древесины.jpg" },
+            { name: "Износостойкость различных пород", url: "images/билет-7/износостойкость.jpg" },
+          ],
+        },
+        {
+          number: 8,
+          title: "Виды деревообрабатывающих станков",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Виды деревообрабатывающих станков</div>
                         <div class="question-content">
@@ -845,17 +846,17 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Токарный станок по дереву", url: "images/билет-8/токарный-станок.jpg" },
-                    { name: "Сверлильный станок", url: "images/билет-8/сверлильный-станок.jpg" },
-                    { name: "Фрезерный станок", url: "images/билет-8/фрезерный-станок.jpg" },
-                    { name: "Циркулярная пила", url: "images/билет-8/циркулярная-пила.jpg" }
-                ]
-            },
-            {
-                number: 9,
-                title: "Назначение и устройство настольно-сверлильного станка, Т/Б при работе на нём",
-                content: `
+          illustrations: [
+            { name: "Токарный станок по дереву", url: "images/билет-8/токарный-станок.jpg" },
+            { name: "Сверлильный станок", url: "images/билет-8/сверлильный-станок.jpg" },
+            { name: "Фрезерный станок", url: "images/билет-8/фрезерный-станок.jpg" },
+            { name: "Циркулярная пила", url: "images/билет-8/циркулярная-пила.jpg" },
+          ],
+        },
+        {
+          number: 9,
+          title: "Назначение и устройство настольно-сверлильного станка, Т/Б при работе на нём",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Назначение и устройство настольно-сверлильного станка, Т/Б при работе на нём</div>
                         <div class="question-content">
@@ -910,16 +911,16 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Устройство настольно-сверлильного станка", url: "images/билет-9/устройство-сверлильного-станка.jpg" },
-                    { name: "Правильное крепление заготовки", url: "images/билет-9/крепление-заготовки.jpg" },
-                    { name: "Средства защиты при работе", url: "images/билет-9/средства-защиты.jpg" }
-                ]
-            },
-            {
-                number: 10,
-                title: "Назначение сверления древесины, инструменты и приспособления, Т/Б при сверлении древесины",
-                content: `
+          illustrations: [
+            { name: "Устройство настольно-сверлильного станка", url: "images/билет-9/устройство-сверлильного-станка.jpg" },
+            { name: "Правильное крепление заготовки", url: "images/билет-9/крепление-заготовки.jpg" },
+            { name: "Средства защиты при работе", url: "images/билет-9/средства-защиты.jpg" },
+          ],
+        },
+        {
+          number: 10,
+          title: "Назначение сверления древесины, инструменты и приспособления, Т/Б при сверлении древесины",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Назначение сверления древесины, инструменты и приспособления, Т/Б при сверлении древесины</div>
                         <div class="question-content">
@@ -998,17 +999,17 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Виды сверл для древесины", url: "images/билет-10/виды-сверл.jpg" },
-                    { name: "Инструменты для сверления", url: "images/билет-10/инструменты-сверления.jpg" },
-                    { name: "Правила безопасности при сверлении", url: "images/билет-10/безопасность-сверления.jpg" },
-                    { name: "Приспособления для сверления", url: "images/билет-10/приспособления-сверления.jpg" }
-                ]
-            },
-            {
-                number: 11,
-                title: "Назначение токарного станка по дереву, его устройство, Т/Б при работе на токарном станке",
-                content: `
+          illustrations: [
+            { name: "Виды сверл для древесины", url: "images/билет-10/виды-сверл.jpg" },
+            { name: "Инструменты для сверления", url: "images/билет-10/инструменты-сверления.jpg" },
+            { name: "Правила безопасности при сверлении", url: "images/билет-10/безопасность-сверления.jpg" },
+            { name: "Приспособления для сверления", url: "images/билет-10/приспособления-сверления.jpg" },
+          ],
+        },
+        {
+          number: 11,
+          title: "Назначение токарного станка по дереву, его устройство, Т/Б при работе на токарном станке",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Назначение токарного станка по дереву, его устройство, Т/Б при работе на токарном станке</div>
                         <div class="question-content">
@@ -1070,17 +1071,17 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Устройство токарного станка", url: "images/билет-11/устройство-токарного-станка.jpg" },
-                    { name: "Виды токарных работ", url: "images/билет-11/виды-токарных-работ.jpg" },
-                    { name: "Инструменты для токарных работ", url: "images/билет-11/инструменты-токарные.jpg" },
-                    { name: "Безопасность на токарном станке", url: "images/билет-11/безопасность-токарные.jpg" }
-                ]
-            },
-            {
-                number: 12,
-                title: "Назначения склеивания, клеевые материалы, Т/Б при склеивании древесины",
-                content: `
+          illustrations: [
+            { name: "Устройство токарного станка", url: "images/билет-11/устройство-токарного-станка.jpg" },
+            { name: "Виды токарных работ", url: "images/билет-11/виды-токарных-работ.jpg" },
+            { name: "Инструменты для токарных работ", url: "images/билет-11/инструменты-токарные.jpg" },
+            { name: "Безопасность на токарном станке", url: "images/билет-11/безопасность-токарные.jpg" },
+          ],
+        },
+        {
+          number: 12,
+          title: "Назначения склеивания, клеевые материалы, Т/Б при склеивании древесины",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Назначения склеивания, клеевые материалы, Т/Б при склеивании древесины</div>
                         <div class="question-content">
@@ -1142,17 +1143,17 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Виды клеев для древесины", url: "images/билет-12/виды-клеев.jpg" },
-                    { name: "Технология склеивания древесины", url: "images/билет-12/технология-склеивания.jpg" },
-                    { name: "Средства защиты при работе с клеями", url: "images/билет-12/защита-склеивание.jpg" },
-                    { name: "Инструменты для нанесения клея", url: "images/билет-12/инструменты-склеивание.jpg" }
-                ]
-            },
-            {
-                number: 13,
-                title: "Назначение соединения металлическими скрепами, Т/Б при соединении металлическими скрепами",
-                content: `
+          illustrations: [
+            { name: "Виды клеев для древесины", url: "images/билет-12/виды-клеев.jpg" },
+            { name: "Технология склеивания древесины", url: "images/билет-12/технология-склеивания.jpg" },
+            { name: "Средства защиты при работе с клеями", url: "images/билет-12/защита-склеивание.jpg" },
+            { name: "Инструменты для нанесения клея", url: "images/билет-12/инструменты-склеивание.jpg" },
+          ],
+        },
+        {
+          number: 13,
+          title: "Назначение соединения металлическими скрепами, Т/Б при соединении металлическими скрепами",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Назначение соединения металлическими скрепами, Т/Б при соединении металлическими скрепами</div>
                         <div class="question-content">
@@ -1255,17 +1256,17 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Виды металлических креплений", url: "images/билет-13/виды-креплений.jpg" },
-                    { name: "Технология соединения шурупами", url: "images/билет-13/соединение-шурупами.jpg" },
-                    { name: "Соединение болтами и уголками", url: "images/билет-13/болты-уголки.jpg" },
-                    { name: "Безопасность при работе с крепежом", url: "images/билет-13/безопасность-крепление.jpg" }
-                ]
-            },
-            {
-                number: 14,
-                title: "Назначение непрозрачной отделки, Т/Б при непрозрачной отделке столярных изделий",
-                content: `
+          illustrations: [
+            { name: "Виды металлических креплений", url: "images/билет-13/виды-креплений.jpg" },
+            { name: "Технология соединения шурупами", url: "images/билет-13/соединение-шурупами.jpg" },
+            { name: "Соединение болтами и уголками", url: "images/билет-13/болты-уголки.jpg" },
+            { name: "Безопасность при работе с крепежом", url: "images/билет-13/безопасность-крепление.jpg" },
+          ],
+        },
+        {
+          number: 14,
+          title: "Назначение непрозрачной отделки, Т/Б при непрозрачной отделке столярных изделий",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Назначение непрозрачной отделки, Т/Б при непрозрачной отделке столярных изделий</div>
                         <div class="question-content">
@@ -1384,17 +1385,17 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Виды непрозрачных покрытий", url: "images/билет-14/виды-покрытий.jpg" },
-                    { name: "Технология нанесения краски", url: "images/билет-14/нанесение-краски.jpg" },
-                    { name: "Средства защиты при окрашивании", url: "images/билет-14/защита-окрашивание.jpg" },
-                    { name: "Инструменты для отделки", url: "images/билет-14/инструменты-отделки.jpg" }
-                ]
-            },
-            {
-                number: 15,
-                title: "Назначение прозрачной отделки, Т/Б при прозрачной отделке столярного изделия",
-                content: `
+          illustrations: [
+            { name: "Виды непрозрачных покрытий", url: "images/билет-14/виды-покрытий.jpg" },
+            { name: "Технология нанесения краски", url: "images/билет-14/нанесение-краски.jpg" },
+            { name: "Средства защиты при окрашивании", url: "images/билет-14/защита-окрашивание.jpg" },
+            { name: "Инструменты для отделки", url: "images/билет-14/инструменты-отделки.jpg" },
+          ],
+        },
+        {
+          number: 15,
+          title: "Назначение прозрачной отделки, Т/Б при прозрачной отделке столярного изделия",
+          content: `
                     <div class="question">
                         <div class="question-title">1 вопрос: Назначение прозрачной отделки, Т/Б при прозрачной отделке столярного изделия</div>
                         <div class="question-content">
@@ -1513,344 +1514,289 @@
                         </div>
                     </div>
                 `,
-                illustrations: [
-                    { name: "Виды прозрачных покрытий", url: "images/билет-15/виды-прозрачных-покрытий.jpg" },
-                    { name: "Технология нанесения лака", url: "images/билет-15/нанесение-лака.jpg" },
-                    { name: "Обработка древесины маслом", url: "images/билет-15/обработка-маслом.jpg" },
-                    { name: "Средства защиты при работе с лаками", url: "images/билет-15/защита-лакировка.jpg" }
-                ]
-            }
-        ];
+          illustrations: [
+            { name: "Виды прозрачных покрытий", url: "images/билет-15/виды-прозрачных-покрытий.jpg" },
+            { name: "Технология нанесения лака", url: "images/билет-15/нанесение-лака.jpg" },
+            { name: "Обработка древесины маслом", url: "images/билет-15/обработка-маслом.jpg" },
+            { name: "Средства защиты при работе с лаками", url: "images/билет-15/защита-лакировка.jpg" },
+          ],
+        },
+      ];
 
-        // Данные для экзаменационного теста
-        const testQuestions = [
-            {
-                question: "1. Какой инструмент используют для продольного пиления древесины?",
-                options: [
-                    "а) Лобзик",
-                    "б) Ножовка с мелким зубом",
-                    "в) Лучковая пила",
-                    "г) Шипорезная пила"
-                ],
-                correct: 2
-            },
-            {
-                question: "2. Для чего предназначен столярный верстак?",
-                options: [
-                    "а) Для хранения инструментов",
-                    "б) Для крепкого удерживания заготовки при работе",
-                    "в) Для сушки древесины",
-                    "г) Для заточки инструментов"
-                ],
-                correct: 1
-            },
-            {
-                question: "3. Основной частью рубанка является:",
-                options: [
-                    "а) Молоток",
-                    "б) Нож (резец)",
-                    "в) Стамеска",
-                    "г) Напильник"
-                ],
-                correct: 1
-            },
-            {
-                question: "4. Какой материал получают путем прессования древесной стружки?",
-                options: [
-                    "а) Фанера",
-                    "б) ДСП (Древесно-стружечная плита)",
-                    "в) Брус",
-                    "г) Вагонка"
-                ],
-                correct: 1
-            },
-            {
-                question: "5. Что необходимо сделать в первую очередь при получении травмы (например, пореза) в мастерской?",
-                options: [
-                    "а) Продолжить работу",
-                    "б) Немедленно сообщить учителю",
-                    "в) Вытереть кровь тряпкой",
-                    "г) Самому пойти в медпункт"
-                ],
-                correct: 1
-            },
-            {
-                question: "6. Какой инструмент НЕ используется для разметки деталей?",
-                options: [
-                    "а) Угольник",
-                    "б) Рейсмус",
-                    "в) Рулетка",
-                    "г) Молоток"
-                ],
-                correct: 3
-            },
-            {
-                question: "7. Для чего служит шлифовальная шкурка?",
-                options: [
-                    "а) Для распиливания заготовок",
-                    "б) Для выравнивания и сглаживания поверхности древесины",
-                    "в) Для сверления отверстий",
-                    "г) Для склеивания деталей"
-                ],
-                correct: 1
-            },
-            {
-                question: "8. Струбцина – это инструмент для:",
-                options: [
-                    "а) Сверления",
-                    "б) Склеивания и временного сжатия деталей",
-                    "в) Разметки углов",
-                    "г) Пиления"
-                ],
-                correct: 1
-            },
-            {
-                question: "9. Каким клеем чаще всего склеивают древесину в столярном деле?",
-                options: [
-                    "а) Канцелярский клей",
-                    "б) ПВА столярный",
-                    "в) Суперклей",
-                    "г) Клей для обуви"
-                ],
-                correct: 1
-            },
-            {
-                question: "10. Что означает знак безопасности в виде перечеркнутой сигареты?",
-                options: [
-                    "а) Не пить воду",
-                    "б) Не шуметь",
-                    "в) Не курить",
-                    "г) Не работать"
-                ],
-                correct: 2
-            },
-            {
-                question: "11. Какой инструмент используют для поперечного пиления доски?",
-                options: [
-                    "а) Ножовка с крупным зубом",
-                    "б) Лобзик",
-                    "в) Рубанок",
-                    "г) Стамеска"
-                ],
-                correct: 0
-            },
-            {
-                question: "12. Для чего нужен рубанок?",
-                options: [
-                    "а) Для долбления пазов",
-                    "б) Для строгания древесины",
-                    "в) для пиления",
-                    "г) Для забивания гвоздей"
-                ],
-                correct: 1
-            },
-            {
-                question: "13. Как называется инструмент для вырезания небольших углублений в древесине?",
-                options: [
-                    "а) Киянка",
-                    "б) Отвертка",
-                    "в) Стамеска",
-                    "г) Клещи"
-                ],
-                correct: 2
-            },
-            {
-                question: "14. Фанера – это материал, который состоит из:",
-                options: [
-                    "а) Цельного куска дерева",
-                    "б) Спрессованной стружки",
-                    "в) Склеенных тонких слоев шпона",
-                    "г) Пластика и опилок"
-                ],
-                correct: 2
-            },
-            {
-                question: "15. Перед началом работы необходимо:",
-                options: [
-                    "а) Спрятать инструмент",
-                    "б) Надеть рабочую одежду и проверить исправность инструмента",
-                    "в) Быстро начать работу, чтобы успеть",
-                    "г) Поиграть с инструментом"
-                ],
-                correct: 1
-            }
-        ];
+      // Данные для экзаменационного теста
+      const testQuestions = [
+        {
+          question: "1. Какой инструмент используют для продольного пиления древесины?",
+          options: ["а) Лобзик", "б) Ножовка с мелким зубом", "в) Лучковая пила", "г) Шипорезная пила"],
+          correct: 2,
+        },
+        {
+          question: "2. Для чего предназначен столярный верстак?",
+          options: ["а) Для хранения инструментов", "б) Для крепкого удерживания заготовки при работе", "в) Для сушки древесины", "г) Для заточки инструментов"],
+          correct: 1,
+        },
+        {
+          question: "3. Основной частью рубанка является:",
+          options: ["а) Молоток", "б) Нож (резец)", "в) Стамеска", "г) Напильник"],
+          correct: 1,
+        },
+        {
+          question: "4. Какой материал получают путем прессования древесной стружки?",
+          options: ["а) Фанера", "б) ДСП (Древесно-стружечная плита)", "в) Брус", "г) Вагонка"],
+          correct: 1,
+        },
+        {
+          question: "5. Что необходимо сделать в первую очередь при получении травмы (например, пореза) в мастерской?",
+          options: ["а) Продолжить работу", "б) Немедленно сообщить учителю", "в) Вытереть кровь тряпкой", "г) Самому пойти в медпункт"],
+          correct: 1,
+        },
+        {
+          question: "6. Какой инструмент НЕ используется для разметки деталей?",
+          options: ["а) Угольник", "б) Рейсмус", "в) Рулетка", "г) Молоток"],
+          correct: 3,
+        },
+        {
+          question: "7. Для чего служит шлифовальная шкурка?",
+          options: ["а) Для распиливания заготовок", "б) Для выравнивания и сглаживания поверхности древесины", "в) Для сверления отверстий", "г) Для склеивания деталей"],
+          correct: 1,
+        },
+        {
+          question: "8. Струбцина – это инструмент для:",
+          options: ["а) Сверления", "б) Склеивания и временного сжатия деталей", "в) Разметки углов", "г) Пиления"],
+          correct: 1,
+        },
+        {
+          question: "9. Каким клеем чаще всего склеивают древесину в столярном деле?",
+          options: ["а) Канцелярский клей", "б) ПВА столярный", "в) Суперклей", "г) Клей для обуви"],
+          correct: 1,
+        },
+        {
+          question: "10. Что означает знак безопасности в виде перечеркнутой сигареты?",
+          options: ["а) Не пить воду", "б) Не шуметь", "в) Не курить", "г) Не работать"],
+          correct: 2,
+        },
+        {
+          question: "11. Какой инструмент используют для поперечного пиления доски?",
+          options: ["а) Ножовка с крупным зубом", "б) Лобзик", "в) Рубанок", "г) Стамеска"],
+          correct: 0,
+        },
+        {
+          question: "12. Для чего нужен рубанок?",
+          options: ["а) Для долбления пазов", "б) Для строгания древесины", "в) для пиления", "г) Для забивания гвоздей"],
+          correct: 1,
+        },
+        {
+          question: "13. Как называется инструмент для вырезания небольших углублений в древесине?",
+          options: ["а) Киянка", "б) Отвертка", "в) Стамеска", "г) Клещи"],
+          correct: 2,
+        },
+        {
+          question: "14. Фанера – это материал, который состоит из:",
+          options: ["а) Цельного куска дерева", "б) Спрессованной стружки", "в) Склеенных тонких слоев шпона", "г) Пластика и опилок"],
+          correct: 2,
+        },
+        {
+          question: "15. Перед началом работы необходимо:",
+          options: [
+            "а) Спрятать инструмент",
+            "б) Надеть рабочую одежду и проверить исправность инструмента",
+            "в) Быстро начать работу, чтобы успеть",
+            "г) Поиграть с инструментом",
+          ],
+          correct: 1,
+        },
+      ];
 
-        // Данные для дополнительных вопросов
-        const additionalQuestions = [
-            {
-                id: 1,
-                title: "Какие профессии связаны со столярным делом",
-                answer: "Профессии связанные со столярным делом: плотник, строитель, монтажник, сборщик мебели."
-            },
-            {
-                id: 2,
-                title: "Техника безопасности с ручным столярным инструментом",
-                answer: "При работе с ручным столярным инструментом должны соблюдать Т/Б : -надеть специальную одежду -проверить исправность инструментов - инструменты разложить на верстаке - применять инструмент только по назначению -работать строго по инструкции, не отвлекаясь - после работы убрать инструменты на место."
-            },
-            {
-                id: 3,
-                title: "Устройство рубанка",
-                answer: "Устройство рубанка: Рубанок состоит из трёх основных частей- колодки, ножа и клина. Нож устанавливают в колодке и звкрепляют клином. В передней части есть рожок, за него держат инструмент левой рукой при строгании .Нижняя часть колодки-подошва, а в ней отверстие –леток, через него улетает стружка."
-            },
-            {
-                id: 4,
-                title: "Молоток, назначение, части молотка",
-                answer: "Молоток, назначение, части молотка: металлический или деревянный брусок, насаженный на рукоятку под прямым углом, служит для забивания гвоздей, ударов по чему-то. Части молотка- рукоятка, боёк, клин."
-            },
-            {
-                id: 5,
-                title: "Ножовка, назначение",
-                answer: "Ножовка, назначение – узкая ручная пила. Служит для распиливания древесины."
-            },
-            {
-                id: 6,
-                title: "Строение древесины",
-                answer: "Строение древесины . Древесина-это плотная, твёрдая часть дерева, находящаяся под корой. За корой идёт камбий, обеспечивающий рост дерева. В дереве откладываются годичные кольца, они хорошо видны у комля ( ближе к корню ). Заболонь образована живыми клетками, она проводит воду от корней к кроне. Из отмирающих клеток образуется ядро. К ядру прилегает сердцевина, от неё расходятся в разные стороны сердцевинные лучи."
-            },
-            {
-                id: 7,
-                title: "Породы древесины",
-                answer: "Породы древесины: древесина различается на лиственные и хвойные породы. Хвойные породы: сосна, ель. кедр. пихта. Они имеют характерный смоляной запах. Используется в строительном и мебельном производстве. Лиственные породы деревьев: осина, липа.ольха. берёза. Она также используется в мебельном, строительном, столярном, карандашном производствах."
-            },
-            {
-                id: 8,
-                title: "Верстак, части, назначение",
-                answer: "Верстак, части, назначение. Верстак- рабочее место столяра- это стол для разметки и обработки древесины. Он состоит из крышки и подверстачья. На подверстачье устанавливается крышка Крышка имеет верстачную доску с лотком, боковой и задний зажимы. На доске обрабатывают детали, в ней сделаны гнёзда для клиньев, с их помощью можно закреплять детали и заготовки. В лотке хранят инструменты во время работы. В переднем и заднем зажимах закрепляют заготовки при строгании."
-            },
-            {
-                id: 9,
-                title: "Клей, его виды",
-                answer: "Клей, его виды. Для склеивания древесины применяют клеи животного происхождения, растительные и смоляные (из синтетических смол). Глютиновый, или столярный-животного происхождения. Он бывает трёх сортов: мездровый, костный и рыбный. Казеиновый делают из обезжиренного творога. Он не боится сырости, холода и жары. Преимущество синтетических клеев заключается в обсолютной грибостойкости, высокой водостойкости и большой прочности соединения."
-            },
-            {
-                id: 10,
-                title: "Киянка, назначение, части",
-                answer: "Киянка, назначение. части. Киянка- деревянный молоток больших размеров, изготовленный из твёрдых пород древесины. Киянкой забивают, соединяют только детали из древесины. С её помощью забивают клинья в верстачную доску, соединяют детали между собой. Киянка состоит из рукоятки и бойка."
-            },
-            {
-                id: 11,
-                title: "Строение табурета",
-                answer: "Строение табурета. Табуретка состоит из двух основных частей- корпуса и крышки. Корпус – это сборная конструкция включающая в себя 4 ножки, 4 царги, 4 проножки. Крышка к корпусу крепится на четырёх сухарях."
-            },
-            {
-                id: 12,
-                title: "Что такое прозрачная отделка столярных изделий",
-                answer: "Что такое прозрачная отделка столярных изделий. Прозрачная отделка осуществляется олифой, лаком, воском для того, чтобы была видна текстура дерева."
-            },
-            {
-                id: 13,
-                title: "Что такое непрозрачная отделка столярных изделий",
-                answer: "Что такое непрозрачная отделка столярных изделий. Это покрытие древесины красками и эмалями. Ими отделывают изделия, которые подвергаются постоянным атмосферным и значительным механическим воздействием (трамвайные и железнодорожные вагоны), мебель( школьная, детская, больничная,в общественных столовых, магазинов, вокзалов)."
-            },
-            {
-                id: 14,
-                title: "Стамеска, назначение, части",
-                answer: "Стамеска,назначение, части. Это ручной деревообрабатывающий инструмент( заточенная стальная пластина с деревянной ручкой) для срезки фасок, обработки криволинейных поверхностей, а также для выдалбливания отверстий в узких и тонких деталях."
-            },
-            {
-                id: 15,
-                title: "Что такое пиломатериал, его виды",
-                answer: "Что такое пиломатериалы. Из брёвен путём раскроя получают пилёные заготовки- пиломатериалы: брусья (толщина и ширина более 100 мм), доски толщина до 100 мм и шириной более двойной толщины), бруски- обрезной пиломатериал толщиной до 100 мм , обапол- боковые части бревна, срезанные при продольном распиливании."
-            }
-        ];
+      // Данные для дополнительных вопросов
+      const additionalQuestions = [
+        {
+          id: 1,
+          title: "Какие профессии связаны со столярным делом",
+          answer: "Профессии связанные со столярным делом: плотник, строитель, монтажник, сборщик мебели.",
+        },
+        {
+          id: 2,
+          title: "Техника безопасности с ручным столярным инструментом",
+          answer:
+            "При работе с ручным столярным инструментом должны соблюдать Т/Б : -надеть специальную одежду -проверить исправность инструментов - инструменты разложить на верстаке - применять инструмент только по назначению -работать строго по инструкции, не отвлекаясь - после работы убрать инструменты на место.",
+        },
+        {
+          id: 3,
+          title: "Устройство рубанка",
+          answer:
+            "Устройство рубанка: Рубанок состоит из трёх основных частей- колодки, ножа и клина. Нож устанавливают в колодке и звкрепляют клином. В передней части есть рожок, за него держат инструмент левой рукой при строгании .Нижняя часть колодки-подошва, а в ней отверстие –леток, через него улетает стружка.",
+        },
+        {
+          id: 4,
+          title: "Молоток, назначение, части молотка",
+          answer:
+            "Молоток, назначение, части молотка: металлический или деревянный брусок, насаженный на рукоятку под прямым углом, служит для забивания гвоздей, ударов по чему-то. Части молотка- рукоятка, боёк, клин.",
+        },
+        {
+          id: 5,
+          title: "Ножовка, назначение",
+          answer: "Ножовка, назначение – узкая ручная пила. Служит для распиливания древесины.",
+        },
+        {
+          id: 6,
+          title: "Строение древесины",
+          answer:
+            "Строение древесины . Древесина-это плотная, твёрдая часть дерева, находящаяся под корой. За корой идёт камбий, обеспечивающий рост дерева. В дереве откладываются годичные кольца, они хорошо видны у комля ( ближе к корню ). Заболонь образована живыми клетками, она проводит воду от корней к кроне. Из отмирающих клеток образуется ядро. К ядру прилегает сердцевина, от неё расходятся в разные стороны сердцевинные лучи.",
+        },
+        {
+          id: 7,
+          title: "Породы древесины",
+          answer:
+            "Породы древесины: древесина различается на лиственные и хвойные породы. Хвойные породы: сосна, ель. кедр. пихта. Они имеют характерный смоляной запах. Используется в строительном и мебельном производстве. Лиственные породы деревьев: осина, липа.ольха. берёза. Она также используется в мебельном, строительном, столярном, карандашном производствах.",
+        },
+        {
+          id: 8,
+          title: "Верстак, части, назначение",
+          answer:
+            "Верстак, части, назначение. Верстак- рабочее место столяра- это стол для разметки и обработки древесины. Он состоит из крышки и подверстачья. На подверстачье устанавливается крышка Крышка имеет верстачную доску с лотком, боковой и задний зажимы. На доске обрабатывают детали, в ней сделаны гнёзда для клиньев, с их помощью можно закреплять детали и заготовки. В лотке хранят инструменты во время работы. В переднем и заднем зажимах закрепляют заготовки при строгании.",
+        },
+        {
+          id: 9,
+          title: "Клей, его виды",
+          answer:
+            "Клей, его виды. Для склеивания древесины применяют клеи животного происхождения, растительные и смоляные (из синтетических смол). Глютиновый, или столярный-животного происхождения. Он бывает трёх сортов: мездровый, костный и рыбный. Казеиновый делают из обезжиренного творога. Он не боится сырости, холода и жары. Преимущество синтетических клеев заключается в обсолютной грибостойкости, высокой водостойкости и большой прочности соединения.",
+        },
+        {
+          id: 10,
+          title: "Киянка, назначение, части",
+          answer:
+            "Киянка, назначение. части. Киянка- деревянный молоток больших размеров, изготовленный из твёрдых пород древесины. Киянкой забивают, соединяют только детали из древесины. С её помощью забивают клинья в верстачную доску, соединяют детали между собой. Киянка состоит из рукоятки и бойка.",
+        },
+        {
+          id: 11,
+          title: "Строение табурета",
+          answer:
+            "Строение табурета. Табуретка состоит из двух основных частей- корпуса и крышки. Корпус – это сборная конструкция включающая в себя 4 ножки, 4 царги, 4 проножки. Крышка к корпусу крепится на четырёх сухарях.",
+        },
+        {
+          id: 12,
+          title: "Что такое прозрачная отделка столярных изделий",
+          answer: "Что такое прозрачная отделка столярных изделий. Прозрачная отделка осуществляется олифой, лаком, воском для того, чтобы была видна текстура дерева.",
+        },
+        {
+          id: 13,
+          title: "Что такое непрозрачная отделка столярных изделий",
+          answer:
+            "Что такое непрозрачная отделка столярных изделий. Это покрытие древесины красками и эмалями. Ими отделывают изделия, которые подвергаются постоянным атмосферным и значительным механическим воздействием (трамвайные и железнодорожные вагоны), мебель( школьная, детская, больничная,в общественных столовых, магазинов, вокзалов).",
+        },
+        {
+          id: 14,
+          title: "Стамеска, назначение, части",
+          answer:
+            "Стамеска,назначение, части. Это ручной деревообрабатывающий инструмент( заточенная стальная пластина с деревянной ручкой) для срезки фасок, обработки криволинейных поверхностей, а также для выдалбливания отверстий в узких и тонких деталях.",
+        },
+        {
+          id: 15,
+          title: "Что такое пиломатериал, его виды",
+          answer:
+            "Что такое пиломатериалы. Из брёвен путём раскроя получают пилёные заготовки- пиломатериалы: брусья (толщина и ширина более 100 мм), доски толщина до 100 мм и шириной более двойной толщины), бруски- обрезной пиломатериал толщиной до 100 мм , обапол- боковые части бревна, срезанные при продольном распиливании.",
+        },
+      ];
 
-        // Функция для отображения страницы
-        function showPage(pageNumber) {
-            document.getElementById('page1').classList.remove('active');
-            document.getElementById('page2').classList.remove('active');
-            document.getElementById('page3').classList.remove('active');
-            document.getElementById('page4').classList.remove('active');
-            document.getElementById('page' + pageNumber).classList.add('active');
-            
-            if (pageNumber === 3) {
-                initTest();
-            }
+      // Функция для отображения страницы
+      function showPage(pageNumber) {
+        document.getElementById("page1").classList.remove("active");
+        document.getElementById("page2").classList.remove("active");
+        document.getElementById("page3").classList.remove("active");
+        document.getElementById("page4").classList.remove("active");
+        document.getElementById("page" + pageNumber).classList.add("active");
+
+        if (pageNumber === 3) {
+          initTest();
         }
+      }
 
-        // Функция для отображения содержимого билета
-        function showTicket(ticketNumber) {
-            const ticket = tickets.find(t => t.number === ticketNumber);
-            if (ticket) {
-                document.getElementById('ticketPageTitle').textContent = `Билет №${ticket.number}: ${ticket.title}`;
-                document.getElementById('ticketContent').innerHTML = ticket.content;
-                
-                // Добавляем раздел с иллюстрациями
-                const illustrationsSection = document.getElementById('illustrationsSection');
-                if (ticket.illustrations && ticket.illustrations.length > 0) {
-                    let illustrationsHTML = '<h3>Иллюстрации по теме:</h3><div class="illustration-links">';
-                    ticket.illustrations.forEach(illustration => {
-                        illustrationsHTML += `<a href="${illustration.url}" target="_blank" class="illustration-link">${illustration.name}</a>`;
-                    });
-                    illustrationsHTML += '</div>';
-                    illustrationsSection.innerHTML = illustrationsHTML;
-                } else {
-                    illustrationsSection.innerHTML = '';
-                }
-                
-                showPage(2);
-            }
+      // Функция для отображения содержимого билета
+      function showTicket(ticketNumber) {
+        const ticket = tickets.find((t) => t.number === ticketNumber);
+        if (ticket) {
+          document.getElementById("ticketPageTitle").textContent = `Билет №${ticket.number}: ${ticket.title}`;
+          document.getElementById("ticketContent").innerHTML = ticket.content;
+
+          // Добавляем раздел с иллюстрациями
+          const illustrationsSection = document.getElementById("illustrationsSection");
+          if (ticket.illustrations && ticket.illustrations.length > 0) {
+            let illustrationsHTML = '<h3>Иллюстрации по теме:</h3><div class="illustration-links">';
+            ticket.illustrations.forEach((illustration) => {
+              illustrationsHTML += `<a href="${illustration.url}" target="_blank" class="illustration-link">${illustration.name}</a>`;
+            });
+            illustrationsHTML += "</div>";
+            illustrationsSection.innerHTML = illustrationsHTML;
+          } else {
+            illustrationsSection.innerHTML = "";
+          }
+
+          showPage(2);
         }
+      }
 
-        // Функция для инициализации теста
-        function initTest() {
-            const testContent = document.getElementById('testContent');
-            let testHTML = '<p><strong>Инструкция для ученика:</strong> Выберите один правильный ответ для каждого вопроса.</p>';
-            
-            testQuestions.forEach((question, index) => {
-                testHTML += `
+      // Функция для инициализации теста
+      function initTest() {
+        const testContent = document.getElementById("testContent");
+        let testHTML = "<p><strong>Инструкция для ученика:</strong> Выберите один правильный ответ для каждого вопроса.</p>";
+
+        testQuestions.forEach((question, index) => {
+          testHTML += `
                     <div class="test-question">
                         <div class="question-title">${question.question}</div>
                         <div class="test-options">
-                            ${question.options.map((option, i) => 
-                                `<div class="test-option">
+                            ${question.options
+                              .map(
+                                (option, i) =>
+                                  `<div class="test-option">
                                     <input type="radio" id="q${index}_${i}" name="q${index}" value="${i}">
                                     <label for="q${index}_${i}">${option}</label>
                                 </div>`
-                            ).join('')}
+                              )
+                              .join("")}
                         </div>
                     </div>
                 `;
-            });
-            
-            testHTML += `
+        });
+
+        testHTML += `
                 <div style="margin-top: 30px; text-align: center;">
                     <button class="back-button" onclick="checkTest()">Проверить ответы</button>
                     <div id="testResult" style="margin-top: 20px;"></div>
                 </div>
             `;
-            
-            testContent.innerHTML = testHTML;
-        }
 
-        // Функция для проверки теста
-        function checkTest() {
-            let correctAnswers = 0;
-            const totalQuestions = testQuestions.length;
-            
-            testQuestions.forEach((question, index) => {
-                const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-                if (selectedOption && parseInt(selectedOption.value) === question.correct) {
-                    correctAnswers++;
-                }
-            });
-            
-            const resultElement = document.getElementById('testResult');
-            resultElement.innerHTML = `
+        testContent.innerHTML = testHTML;
+      }
+
+      // Функция для проверки теста
+      function checkTest() {
+        let correctAnswers = 0;
+        const totalQuestions = testQuestions.length;
+
+        testQuestions.forEach((question, index) => {
+          const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+          if (selectedOption && parseInt(selectedOption.value) === question.correct) {
+            correctAnswers++;
+          }
+        });
+
+        const resultElement = document.getElementById("testResult");
+        resultElement.innerHTML = `
                 <div class="test-result">
                     <h3>Результат тестирования</h3>
                     <p>Вы правильно ответили на <strong>${correctAnswers}</strong> из <strong>${totalQuestions}</strong> вопросов.</p>
-                    <p>Оценка: <strong>${Math.round(correctAnswers / totalQuestions * 10)}</strong> из 10 баллов</p>
+                    <p>Оценка: <strong>${Math.round((correctAnswers / totalQuestions) * 10)}</strong> из 10 баллов</p>
                 </div>
             `;
-        }
+      }
 
-        // Функция для отображения дополнительного вопроса
-        function showAdditionalQuestion(id) {
-            const question = additionalQuestions.find(q => q.id === id);
-            if (question) {
-                document.getElementById('additionalPageTitle').textContent = question.title;
-                document.getElementById('additionalContent').innerHTML = `
+      // Функция для отображения дополнительного вопроса
+      function showAdditionalQuestion(id) {
+        const question = additionalQuestions.find((q) => q.id === id);
+        if (question) {
+          document.getElementById("additionalPageTitle").textContent = question.title;
+          document.getElementById("additionalContent").innerHTML = `
                     <div class="question">
                         <div class="question-title">${question.title}</div>
                         <div class="question-content">
@@ -1858,34 +1804,34 @@
                         </div>
                     </div>
                 `;
-                showPage(4);
-            }
+          showPage(4);
         }
+      }
 
-        // Инициализация списка билетов
-        function initTicketList() {
-            const ticketList = document.getElementById('ticketList');
-            ticketList.innerHTML = '';
-            
-            tickets.forEach(ticket => {
-                const ticketItem = document.createElement('div');
-                ticketItem.className = 'ticket-item';
-                ticketItem.onclick = () => showTicket(ticket.number);
-                
-                ticketItem.innerHTML = `
+      // Инициализация списка билетов
+      function initTicketList() {
+        const ticketList = document.getElementById("ticketList");
+        ticketList.innerHTML = "";
+
+        tickets.forEach((ticket) => {
+          const ticketItem = document.createElement("div");
+          ticketItem.className = "ticket-item";
+          ticketItem.onclick = () => showTicket(ticket.number);
+
+          ticketItem.innerHTML = `
                     <div class="ticket-number">Билет №${ticket.number}</div>
                     <div class="ticket-title">${ticket.title}</div>
                 `;
-                
-                ticketList.appendChild(ticketItem);
-            });
-        }
 
-        // Инициализация при загрузке страницы
-        window.onload = function() {
-            initTicketList();
-            updateVisitCounter();
-        };
+          ticketList.appendChild(ticketItem);
+        });
+      }
+
+      // Инициализация при загрузке страницы
+      window.onload = function () {
+        initTicketList();
+        updateVisitCounter();
+      };
     </script>
-</body>
+  </body>
 </html>
